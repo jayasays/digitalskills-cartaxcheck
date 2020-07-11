@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+<modelVersion>4.0.0</modelVersion>
+<groupId>com.digitalskills</groupId>
+<artifactId>cartaxcheck</artifactId>
+<packaging>jar</packaging>
+<version>1.0-SNAPSHOT</version>
+
+<name>Car Tax Check</name>
+
+<properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  <!-- Version numbers -->
+  <io.cucumber.version>1.2.6</io.cucumber.version>
+  <selenium.java.version>3.141.59</selenium.java.version>
+  <cucumber.html.version>0.2.6</cucumber.html.version>
+</properties>
+<dependencies>
+  <dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>${io.cucumber.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>${io.cucumber.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-spring</artifactId>
+    <version>${io.cucumber.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>info.cukes</groupId>
+    <artifactId>cucumber-html</artifactId>
+    <version>${cucumber.html.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>${selenium.java.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>3.10</version>
+  </dependency>
+  <dependency>
+    <groupId>org.hamcrest</groupId>
+    <artifactId>hamcrest-all</artifactId>
+    <version>1.3</version>
+    <scope>test</scope>
+  </dependency>
+</dependencies>
+<build>
+  <testSourceDirectory>test</testSourceDirectory>
+  <plugins>
+    <plugin>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.5.1</version>
+      <configuration>
+        <source />
+        <target />
+      </configuration>
+    </plugin>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>2.16</version>
+      <configuration>
+        <systemPropertyVariables>
+          <chrome.driver.path>/Users/ashok/Ashok/Selenium/webdrivers/chromedriver</chrome.driver.path>
+        </systemPropertyVariables>
+      </configuration>
+      <executions>
+        <execution>
+          <id>default-test</id>
+        </execution>
+      </executions>
+    </plugin>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <configuration>
+        <source>8</source>
+        <target>8</target>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+
+</project>
