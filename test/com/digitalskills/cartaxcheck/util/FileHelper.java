@@ -92,12 +92,4 @@ public class FileHelper {
             return true;
         }
     }
-
-    public static void main(String[] args) throws Exception {
-
-        Files.list(Paths.get("resources"))
-                .filter(Files::isRegularFile)
-                .filter(path -> path.toString().endsWith(".txt"))
-                .forEach(System.out::println);
-    }
 }
