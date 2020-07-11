@@ -6,6 +6,7 @@ import com.digitalskills.cartaxcheck.model.Vehicle;
 import com.digitalskills.cartaxcheck.pageobjects.*;
 import com.digitalskills.cartaxcheck.util.FileHelper;
 import com.digitalskills.cartaxcheck.util.PageLoader;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -52,6 +53,12 @@ public class CarTaxCheckWebPageTest {
 
     }
 
+    /**
+     * Verifies each registration number available in input txt files, by using cartaxcheck.com website
+     * and asserts the values.
+     *
+     * @throws Exception
+     */
     @Test
     public void checkVehicleCarTax() throws Exception {
         //Load car input file and read vehicle registration numbers
@@ -68,8 +75,8 @@ public class CarTaxCheckWebPageTest {
             carTaxCheckPage.clickOnFreeCarCheckButton();
 
             //Check that registration number
-            String actualRegistrationNumber = carTaxCheckPage.getRegistrationNumber().replaceAll("\\s", "");
-            String expectedRegistrationNumber = registrationNumber.replaceAll("\\s", "");
+            String actualRegistrationNumber = carTaxCheckPage.getRegistrationNumber().replaceAll("\\s", StringUtils.EMPTY);
+            String expectedRegistrationNumber = registrationNumber.replaceAll("\\s", StringUtils.EMPTY);
             assertThat(actualRegistrationNumber, is(equalTo(expectedRegistrationNumber)));
 
             //Loading Car Details Page
